@@ -31,21 +31,3 @@ namespace RMQ
         return max(st[l][k], st[r - (1 << k) + 1][k]);
     }
 } // namespace RMQ
-
-int main(void)
-{
-    int *arr;
-    int n, m, x, y;
-    scanf("%d%d", &n, &m);
-    arr = new int[n + 10];
-    for (int i = 1; i <= n; i++)
-        scanf("%d", arr + i);
-    RMQ::init(arr, n);
-    while (m--)
-    {
-        scanf("%d%d", &x, &y);
-        printf("%d\n", RMQ::query(x, y));
-    }
-    delete[] arr;
-    return 0;
-}
